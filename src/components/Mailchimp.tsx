@@ -1,6 +1,6 @@
 "use client";
 
-import { mailchimp, newsletter } from "@/resources";
+import { mailchimp, newsletter as staticNewsletter } from "@/resources";
 import { Button, Heading, Input, Text, Background, Column, Row } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
 import { useState } from "react";
@@ -13,7 +13,12 @@ function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T
   }) as T;
 }
 
-export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
+interface MailchimpProps extends React.ComponentProps<typeof Column> {
+  newsletter?: typeof staticNewsletter;
+}
+
+export const Mailchimp: React.FC<MailchimpProps> = ({ newsletter: propNewsletter, ...flex }) => {
+  const newsletter = propNewsletter || staticNewsletter;
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);

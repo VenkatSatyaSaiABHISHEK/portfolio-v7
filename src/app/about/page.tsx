@@ -12,22 +12,26 @@ import {
   Schema,
   Row,
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 export async function generateMetadata() {
+  const data = await getPortfolioData();
   return Meta.generate({
-    title: about.title,
-    description: about.description,
+    title: data.about.title,
+    description: data.about.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
-    path: about.path,
+    image: `/api/og/generate?title=${encodeURIComponent(data.about.title)}`,
+    path: data.about.path,
   });
 }
 
-export default function About() {
+export default async function About() {
+  const portfolioData = await getPortfolioData();
+  const { about, person, social } = portfolioData;
   const structure = [
     {
       title: about.intro.title,
@@ -62,7 +66,7 @@ export default function About() {
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
+          image: (person.avatar && person.avatar.startsWith("http")) ? person.avatar : `${baseURL}${person.avatar || "/images/avatar.jpg"}`,
         }}
       />
       {about.tableOfContent.display && (
@@ -93,7 +97,7 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size="xl" />
+            <Avatar src={person.avatar || "/images/avatar.jpg"} size="xl" />
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}

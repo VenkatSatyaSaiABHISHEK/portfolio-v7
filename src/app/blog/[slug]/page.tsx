@@ -14,13 +14,14 @@ import {
   Media,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, about, blog, person } from "@/resources";
+import { baseURL } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from "next";
 import React from "react";
 import { Posts } from "@/components/blog/Posts";
 import { ShareSection } from "@/components/blog/ShareSection";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "blog", "posts"]);
@@ -44,16 +45,19 @@ export async function generateMetadata({
 
   if (!post) return {};
 
+  const data = await getPortfolioData();
   return Meta.generate({
     title: post.metadata.title,
     description: post.metadata.summary,
     baseURL: baseURL,
     image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
-    path: `${blog.path}/${post.slug}`,
+    path: `${data.blog.path}/${post.slug}`,
   });
 }
 
 export default async function Blog({ params }: { params: Promise<{ slug: string | string[] }> }) {
+  const portfolioData = await getPortfolioData();
+  const { blog, person, about } = portfolioData;
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
@@ -90,7 +94,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             author={{
               name: person.name,
               url: `${baseURL}${about.path}`,
-              image: `${baseURL}${person.avatar}`,
+              image: (person.avatar && person.avatar.startsWith("http")) ? person.avatar : `${baseURL}${person.avatar || "/images/avatar.jpg"}`,
             }}
           />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
@@ -114,7 +118,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           </Column>
           <Row marginBottom="32" horizontal="center">
             <Row gap="16" vertical="center">
-              <Avatar size="s" src={person.avatar} />
+              <Avatar size="s" src={person.avatar || "/images/avatar.jpg"} />
               <Text variant="label-default-m" onBackground="brand-weak">
                 {person.name}
               </Text>
@@ -147,7 +151,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             <Text as="h2" id="recent-posts" variant="heading-strong-xl" marginBottom="24">
               Recent posts
             </Text>
-            <Posts exclude={[post.slug]} range={[1, 2]} columns="2" thumbnail direction="column" />
+            <Posts exclude={[post.slug]} range={[1, 2]} columns="2" thumbnail direction="column" person={person} />
           </Column>
           <ScrollToHash />
         </Column>

@@ -1,8 +1,17 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Row, IconButton, SmartLink, Text } from "@once-ui-system/core";
-import { person, social } from "@/resources";
+import { person as staticPerson, social as staticSocial } from "@/resources";
 import styles from "./Footer.module.scss";
 
-export const Footer = () => {
+export const Footer = ({ data }: { data?: any }) => {
+  const pathname = usePathname() ?? "";
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+  const person: typeof staticPerson = data?.person || staticPerson;
+  const social: typeof staticSocial = data?.social || staticSocial;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -24,11 +33,6 @@ export const Footer = () => {
         <Text variant="body-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
-          <Text onBackground="neutral-weak">
-            {/* Usage of this template requires attribution. Please don't remove the link to Once UI unless you have a Pro license. */}
-            / Build your portfolio with{" "}
-            <SmartLink href="https://once-ui.com/products/magic-portfolio">Once UI</SmartLink>
-          </Text>
         </Text>
         <Row gap="16">
           {social.map(

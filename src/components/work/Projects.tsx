@@ -1,14 +1,35 @@
 import { getPosts } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+export async function Projects({ range, exclude }: ProjectsProps) {
+  let allMDXProjects = getPosts(["src", "app", "work", "projects"]);
+  const data = await getPortfolioData();
+  const dbProjects = data.projects || [];
+
+  const formattedDbProjects = dbProjects.map((proj: any) => ({
+    slug: proj.slug,
+    content: proj.content || "",
+    metadata: {
+      title: proj.metadata?.title || "",
+      summary: proj.metadata?.summary || "",
+      image: proj.metadata?.image || "",
+      images: proj.metadata?.images || [],
+      tag: proj.metadata?.tag || "",
+      team: proj.metadata?.team || [],
+      link: proj.metadata?.link || "",
+      publishedAt: proj.metadata?.publishedAt || new Date().toISOString()
+    }
+  }));
+
+  const mdxFiltered = allMDXProjects.filter(p => !formattedDbProjects.some(dbP => dbP.slug === p.slug));
+  let allProjects = [...formattedDbProjects, ...mdxFiltered];
 
   // Exclude by slug (exact match)
   if (exclude && exclude.length > 0) {
@@ -34,7 +55,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
           title={post.metadata.title}
           description={post.metadata.summary}
           content={post.content}
-          avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
+          avatars={post.metadata.team?.map((member: any) => ({ src: member.avatar || "/images/avatar.jpg" })) || []}
           link={post.metadata.link || ""}
         />
       ))}

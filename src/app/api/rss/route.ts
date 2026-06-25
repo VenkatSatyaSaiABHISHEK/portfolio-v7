@@ -1,8 +1,11 @@
 import { getPosts } from "@/utils/utils";
-import { baseURL, blog, person } from "@/resources";
+import { baseURL } from "@/resources";
 import { NextResponse } from "next/server";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 export async function GET() {
+  const data = await getPortfolioData();
+  const { person, blog } = data;
   const posts = getPosts(["src", "app", "blog", "posts"]);
 
   // Sort posts by date (newest first)

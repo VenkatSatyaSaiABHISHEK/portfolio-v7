@@ -14,15 +14,17 @@ import {
   SpacingToken,
 } from "@once-ui-system/core";
 import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home, person } from "@/resources";
+import { baseURL, effects, fonts, style, dataStyle } from "@/resources";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 export async function generateMetadata() {
+  const portfolioData = await getPortfolioData();
   return Meta.generate({
-    title: home.title,
-    description: home.description,
+    title: portfolioData.home.title,
+    description: portfolioData.home.description,
     baseURL: baseURL,
-    path: home.path,
-    image: home.image,
+    path: portfolioData.home.path,
+    image: portfolioData.home.image,
   });
 }
 
@@ -31,6 +33,9 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const portfolioData = await getPortfolioData();
+  const person = portfolioData.person;
+
   return (
     <Flex
       suppressHydrationWarning
@@ -156,13 +161,13 @@ export default async function RootLayout({
             />
           </RevealFx>
           <Flex fillWidth minHeight="16" s={{ hide: true }} />
-          <Header />
+          <Header data={portfolioData} />
           <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
             <Flex horizontal="center" fillWidth minHeight="0">
               <RouteGuard>{children}</RouteGuard>
             </Flex>
           </Flex>
-          <Footer />
+          <Footer data={portfolioData} />
         </Column>
       </Providers>
     </Flex>

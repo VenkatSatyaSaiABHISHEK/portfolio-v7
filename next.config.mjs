@@ -16,6 +16,36 @@ const nextConfig = {
         hostname: "www.google.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "unavatar.io",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "drive.google.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "docs.google.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.licdn.com",
+        pathname: "**",
+      },
     ],
   },
   sassOptions: {

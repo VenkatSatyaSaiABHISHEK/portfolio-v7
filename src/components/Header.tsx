@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, person as staticPerson, about as staticAbout, blog as staticBlog, work as staticWork, gallery as staticGallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -42,8 +42,16 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
 
 export default TimeDisplay;
 
-export const Header = () => {
+export const Header = ({ data }: { data?: any }) => {
   const pathname = usePathname() ?? "";
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+  const person: typeof staticPerson = data?.person || staticPerson;
+  const about: typeof staticAbout = data?.about || staticAbout;
+  const blog: typeof staticBlog = data?.blog || staticBlog;
+  const work: typeof staticWork = data?.work || staticWork;
+  const gallery: typeof staticGallery = data?.gallery || staticGallery;
 
   return (
     <>

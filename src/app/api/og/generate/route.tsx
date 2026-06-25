@@ -1,9 +1,12 @@
 import { ImageResponse } from "next/og";
-import { baseURL, person } from "@/resources";
+import { baseURL } from "@/resources";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {
+  const data = await getPortfolioData();
+  const person = data.person;
   let url = new URL(request.url);
   let title = url.searchParams.get("title") || "Portfolio";
 
@@ -63,7 +66,7 @@ export async function GET(request: Request) {
           }}
         >
           <img
-            src={baseURL + person.avatar}
+            src={(person.avatar && person.avatar.startsWith("http")) ? person.avatar : (baseURL + (person.avatar || "/images/avatar.jpg"))}
             style={{
               width: "12rem",
               height: "12rem",

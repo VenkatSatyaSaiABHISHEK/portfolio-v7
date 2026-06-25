@@ -11,22 +11,27 @@ import {
   Meta,
   Line,
 } from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
+import { baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { getPortfolioData } from "@/utils/portfolioData";
+import RotatingBadge from "@/components/RotatingBadge";
 
 export async function generateMetadata() {
+  const data = await getPortfolioData();
   return Meta.generate({
-    title: home.title,
-    description: home.description,
+    title: data.home.title,
+    description: data.home.description,
     baseURL: baseURL,
-    path: home.path,
-    image: home.image,
+    path: data.home.path,
+    image: data.home.image,
   });
 }
 
-export default function Home() {
+export default async function Home() {
+  const portfolioData = await getPortfolioData();
+  const { home, about, person, newsletter } = portfolioData;
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -39,12 +44,12 @@ export default function Home() {
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
+          image: (person.avatar && person.avatar.startsWith("http")) ? person.avatar : `${baseURL}${person.avatar || "/images/avatar.jpg"}`,
         }}
       />
       <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">
-          {home.featured.display && (
+          {home.featured.display && home.featured.title && (
             <RevealFx
               fillWidth
               horizontal="center"
@@ -52,17 +57,10 @@ export default function Home() {
               paddingBottom="32"
               paddingLeft="12"
             >
-              <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
-                paddingY="4"
-                onBackground="neutral-strong"
-                textVariant="label-default-s"
-                arrow={false}
-                href={home.featured.href}
-              >
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
+              <RotatingBadge
+                titleString={home.featured.title as string}
+                href={(home.featured.href as string) || ""}
+              />
             </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
@@ -90,7 +88,7 @@ export default function Home() {
                   <Avatar
                     marginRight="8"
                     style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
+                    src={person.avatar || "/images/avatar.jpg"}
                     size="m"
                   />
                 )}
@@ -115,7 +113,7 @@ export default function Home() {
               </Heading>
             </Row>
             <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
+              <Posts range={[1, 2]} columns="2" person={person} />
             </Row>
           </Row>
           <Row fillWidth paddingLeft="64" horizontal="end">
@@ -124,7 +122,7 @@ export default function Home() {
         </Column>
       )}
       <Projects range={[2]} />
-      <Mailchimp />
+      <Mailchimp newsletter={newsletter} />
     </Column>
   );
 }

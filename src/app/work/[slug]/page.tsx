@@ -15,17 +15,45 @@ import {
   Avatar,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
+import { baseURL } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
+import { getPortfolioData } from "@/utils/portfolioData";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+async function findProjectBySlug(slug: string) {
+  const posts = getPosts(["src", "app", "work", "projects"]);
+  let post = posts.find((p) => p.slug === slug);
+  if (post) return post;
+
+  const data = await getPortfolioData();
+  const dbProjects = data.projects || [];
+  const dbProj = dbProjects.find((p: any) => p.slug === slug);
+  if (dbProj) {
+    return {
+      slug: dbProj.slug,
+      content: dbProj.content || "",
+      metadata: {
+        title: dbProj.metadata?.title || "",
+        summary: dbProj.metadata?.summary || "",
+        image: dbProj.metadata?.image || "",
+        images: dbProj.metadata?.images || [],
+        tag: dbProj.metadata?.tag || "",
+        team: dbProj.metadata?.team || [],
+        link: dbProj.metadata?.link || "",
+        publishedAt: dbProj.metadata?.publishedAt || new Date().toISOString()
+      }
+    };
+  }
+  return null;
 }
 
 export async function generateMetadata({
@@ -38,17 +66,17 @@ export async function generateMetadata({
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  const posts = getPosts(["src", "app", "work", "projects"]);
-  let post = posts.find((post) => post.slug === slugPath);
+  const post = await findProjectBySlug(slugPath);
 
   if (!post) return {};
 
+  const data = await getPortfolioData();
   return Meta.generate({
     title: post.metadata.title,
     description: post.metadata.summary,
     baseURL: baseURL,
     image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
-    path: `${work.path}/${post.slug}`,
+    path: `${data.work.path}/${post.slug}`,
   });
 }
 
@@ -57,20 +85,22 @@ export default async function Project({
 }: {
   params: Promise<{ slug: string | string[] }>;
 }) {
+  const portfolioData = await getPortfolioData();
+  const { work, person, about } = portfolioData;
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
+  const post = await findProjectBySlug(slugPath);
 
   if (!post) {
     notFound();
   }
 
   const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
+    post.metadata.team?.map((person: any) => ({
+      src: person.avatar || "/images/avatar.jpg",
     })) || [];
 
   return (
@@ -89,7 +119,7 @@ export default async function Project({
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
+          image: (person.avatar && person.avatar.startsWith("http")) ? person.avatar : `${baseURL}${person.avatar || "/images/avatar.jpg"}`,
         }}
       />
       <Column maxWidth="s" gap="16" horizontal="center" align="center">
@@ -105,7 +135,7 @@ export default async function Project({
         <Row gap="16" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="s" />}
           <Text variant="label-default-m" onBackground="brand-weak">
-            {post.metadata.team?.map((member, idx) => (
+            {post.metadata.team?.map((member: any, idx: number) => (
               <span key={idx}>
                 {idx > 0 && (
                   <Text as="span" onBackground="neutral-weak">
