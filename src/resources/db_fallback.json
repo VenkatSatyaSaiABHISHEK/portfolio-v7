@@ -1,143 +1,143 @@
 {
+  "blog": {
+    "label": "Blog",
+    "path": "/blog",
+    "description": "Read what Sai Abhishek has been writing about",
+    "title": "Blog"
+  },
+  "about": {
+    "studies": {
+      "display": true,
+      "title": "Education",
+      "institutions": []
+    },
+    "path": "/about",
+    "tableOfContent": {
+      "subItems": false,
+      "display": true
+    },
+    "work": {
+      "experiences": [],
+      "title": "Work Experience",
+      "display": true
+    },
+    "title": "About – Sai Abhishek",
+    "intro": {
+      "description": "I am an AI Product Engineer and UI/UX & Full Stack Developer with a strong interest in building AI products, smart systems, automation workflows, and digital experiences.",
+      "title": "Introduction",
+      "display": true
+    },
+    "technical": {
+      "display": true,
+      "title": "Skills & Certifications",
+      "skills": []
+    },
+    "avatar": {
+      "display": true
+    },
+    "description": "Meet Sai Abhishek, AI Product Engineer and UI/UX & Full Stack Developer from India",
+    "label": "About",
+    "calendar": {
+      "display": false,
+      "link": ""
+    }
+  },
+  "projects": [
+    {
+      "content": "### Automate Restaurant Workflow with Open Source Solution | chinthalapudi Venkata Satya Sai Abhishek posted on the topic\n\n🚀 𝗜𝗻𝘁𝗿𝗼𝗱𝘂𝗰𝗶𝗻𝗴 𝗦𝗺𝗮𝗿𝘁 𝗥𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝗦𝘆𝘀𝘁𝗲𝗺 🍽️\nA modern platform designed to automate the complete restaurant workflow — from customer orders to delivery and business analytics.\n✨ 𝗞𝗲𝘆 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n✅ Digital Order Management\n✅ Real-Time Kitchen Dashboard\n✅ Waiter Notifications\n✅ Inventory Management\n✅ Cash & Online Payment Tracking\n✅ Sales Analytics Dashboard\n✅ Menu Management\n✅ End-to-End Automated Workflow\n🛠️ 𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸:\n⚛️ React\n🔥 Firebase\n🎨 Tailwind CSS\n✨ Framer Motion\n🔄 𝗪𝗼𝗿𝗸𝗳𝗹𝗼𝘄:\nCustomer → Inventory → Payment → Chef → Waiter → Customer → Admin Dashboard\n🌟 𝗧𝗵𝗶𝘀 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝗶𝘀 𝗯𝗲𝗶𝗻𝗴 𝗯𝘂𝗶𝗹𝘁 𝗮𝘀 𝗮𝗻 𝗢𝗽𝗲𝗻 𝗦𝗼𝘂𝗿𝗰𝗲 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 to help students and developers learn, collaborate, and build smarter restaurant solutions together.\n🚀 𝗧𝗵𝗲 𝗴𝗼𝗮𝗹 𝗶𝘀 𝘁𝗼 𝗯𝗿𝗶𝗻𝗴 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝗿𝗲𝗮𝗹-𝘁𝗶𝗺𝗲 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝘁𝗼 𝘁𝗵𝗲 𝗿𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁 𝗶𝗻𝗱𝘂𝘀𝘁𝗿𝘆.\n💬 𝗜𝗻𝘁𝗲𝗿𝗲𝘀𝘁𝗲𝗱 𝗶𝗻 𝗲𝘅𝗽𝗹𝗼𝗿𝗶𝗻𝗴 𝘁𝗵𝗲 𝗰𝗼𝗱𝗲 𝗼𝗿 𝗰𝗼𝗻𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗻𝗴?\n👇 𝗖𝗼𝗺𝗺𝗲𝗻𝘁 \"Open Source\" or \"GitHub\" below, and the repository link will be shared!\n⭐ 𝗖𝗼𝗻𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗼𝗻𝘀, 𝗶𝗱𝗲𝗮𝘀, 𝗮𝗻𝗱 𝗳𝗲𝗲𝗱𝗯𝗮𝗰𝗸 𝗮𝗿𝗲 𝗮𝗹𝘄𝗮𝘆𝘀 𝘄𝗲𝗹𝗰𝗼𝗺𝗲.\n#𝗢𝗽𝗲𝗻𝗦𝗼𝘂𝗿𝗰𝗲 #𝗥𝗲𝗮𝗰𝘁𝗝𝗦 #𝗙𝗶𝗿𝗲𝗯𝗮𝘀𝗲 #𝗧𝗮𝗶𝗹𝘄𝗶𝗻𝗱𝗖𝗦𝗦 #𝗪𝗲𝗯𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 #𝗙𝘂𝗹𝗹𝗦𝘁𝗮𝗰𝗸 #𝗥𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 #𝗚𝗶𝘁𝗛𝘂𝗯 #𝗜𝗻𝗻𝗼𝘃𝗮𝘁𝗶𝗼𝗻 #𝗧𝗲𝗰𝗵𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆\n\n[Read full LinkedIn post](https://www.linkedin.com/posts/chinthalapudi-venkata-satya-sai-abhishek-659ab0306_opensource-reactjs-firebase-ugcPost-7472234329713188864-zpc1/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE4d1qUBf-owTbBpGqA-pZCS3If4q4e7qMU)",
+      "metadata": {
+        "team": [
+          {
+            "avatar": "https://i.ibb.co/dSRSCvg/avatar.jpg",
+            "linkedIn": "https://www.linkedin.com/in/chinthalapudi-venkata-satya-saiabhishek-659ab0306",
+            "name": "Chinthalapudi Venkata Satya Sai Abhishek",
+            "role": "AI Product Engineer | UI/UX & Full Stack Developer"
+          }
+        ],
+        "images": [
+          "https://dms.licdn.com/playlist/vid/v2/D5605AQHPUAnMF43S7w/thumbnail-with-play-button-overlay-high/B56Z7K1jQTIoC0-/0/1781519498040?e=2147483647&v=beta&t=uC5WthaZcHFaaYzQW7LqpY3qTMBpF0-5ztjpgDb3Eg4"
+        ],
+        "image": "https://dms.licdn.com/playlist/vid/v2/D5605AQHPUAnMF43S7w/thumbnail-with-play-button-overlay-high/B56Z7K1jQTIoC0-/0/1781519498040?e=2147483647&v=beta&t=uC5WthaZcHFaaYzQW7LqpY3qTMBpF0-5ztjpgDb3Eg4",
+        "tag": "LinkedIn Import",
+        "publishedAt": "2026-06-25",
+        "link": "https://www.linkedin.com/posts/chinthalapudi-venkata-satya-sai-abhishek-659ab0306_opensource-reactjs-firebase-ugcPost-7472234329713188864-zpc1/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE4d1qUBf-owTbBpGqA-pZCS3If4q4e7qMU",
+        "title": "Automate Restaurant Workflow with Open Source Solution | chinthalapudi Venkata Satya Sai Abhishek posted on the topic",
+        "summary": "🚀 𝗜𝗻𝘁𝗿𝗼𝗱𝘂𝗰𝗶𝗻𝗴 𝗦𝗺𝗮𝗿𝘁 𝗥𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝗦𝘆𝘀𝘁𝗲𝗺 🍽️\nA modern platform designed to automate the complete re..."
+      },
+      "slug": "automate-restaurant-workflow-with-open-source-solution-chinthalapudi-venkata-satya-sai-abhishek-posted-on-the-topic"
+    }
+  ],
+  "social": [
+    {
+      "link": "https://github.com",
+      "icon": "github",
+      "essential": true,
+      "name": "GitHub"
+    },
+    {
+      "link": "https://www.linkedin.com/in/chinthalapudi-venkata-satya-saiabhishek-659ab0306",
+      "icon": "linkedin",
+      "essential": true,
+      "name": "LinkedIn"
+    },
+    {
+      "name": "Email",
+      "link": "mailto:abhi31mahi@gmail.com",
+      "icon": "email",
+      "essential": true
+    },
+    {
+      "essential": true,
+      "icon": "link",
+      "link": "https://www.linkedin.com/in/chinthalapudi-venkata-satya-saiabhishek-659ab0306",
+      "name": "Portfolio"
+    }
+  ],
   "home": {
-    "title": "Sai Abhishek's Portfolio",
-    "description": "Portfolio website showcasing my work as an AI Product Engineer and UI/UX & Full Stack Developer",
-    "headline": "Building the Future , One Line of Code at a Time",
     "featured": {
       "display": true,
       "title": "Smart Restaurant System launched; Open Source project active; Building AI Products & UI/UX; Check out my GitHub",
       "href": "Professional AI & Full-Stack Showcase"
     },
-    "subline": "AI Product Engineer and UI/UX & Full Stack Developer.",
+    "description": "Portfolio website showcasing my work as an AI Product Engineer and UI/UX & Full Stack Developer",
     "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800",
-    "path": "/",
-    "label": "Home"
-  },
-  "blog": {
-    "title": "Blog",
-    "description": "Read what Sai Abhishek has been writing about",
-    "path": "/blog",
-    "label": "Blog"
-  },
-  "work": {
-    "title": "Projects – Sai Abhishek",
-    "description": "AI and developer projects by Sai Abhishek",
-    "path": "/work",
-    "label": "Work"
-  },
-  "gallery": {
-    "label": "Gallery",
-    "path": "/gallery",
-    "images": [],
-    "description": "A photo collection by Sai Abhishek",
-    "title": "Photo gallery – Sai Abhishek"
-  },
-  "social": [
-    {
-      "icon": "github",
-      "essential": true,
-      "link": "https://github.com",
-      "name": "GitHub"
-    },
-    {
-      "icon": "linkedin",
-      "name": "LinkedIn",
-      "link": "https://www.linkedin.com/in/chinthalapudi-venkata-satya-saiabhishek-659ab0306",
-      "essential": true
-    },
-    {
-      "essential": true,
-      "link": "mailto:abhi31mahi@gmail.com",
-      "name": "Email",
-      "icon": "email"
-    },
-    {
-      "icon": "link",
-      "name": "Portfolio",
-      "link": "https://www.linkedin.com/in/chinthalapudi-venkata-satya-saiabhishek-659ab0306",
-      "essential": true
-    }
-  ],
-  "about": {
-    "intro": {
-      "title": "Introduction",
-      "display": true,
-      "description": "I am an AI Product Engineer and UI/UX & Full Stack Developer with a strong interest in building AI products, smart systems, automation workflows, and digital experiences."
-    },
-    "description": "Meet Sai Abhishek, AI Product Engineer and UI/UX & Full Stack Developer from India",
-    "work": {
-      "title": "Work Experience",
-      "display": true,
-      "experiences": []
-    },
-    "label": "About",
-    "avatar": {
-      "display": true
-    },
-    "calendar": {
-      "link": "",
-      "display": false
-    },
-    "title": "About – Sai Abhishek",
-    "path": "/about",
-    "technical": {
-      "title": "Skills & Certifications",
-      "display": true,
-      "skills": []
-    },
-    "studies": {
-      "institutions": [],
-      "display": true,
-      "title": "Education"
-    },
-    "tableOfContent": {
-      "subItems": false,
-      "display": true
-    }
-  },
-  "projects": [
-    {
-      "slug": "automate-restaurant-workflow-with-open-source-solution-chinthalapudi-venkata-satya-sai-abhishek-posted-on-the-topic",
-      "content": "### Automate Restaurant Workflow with Open Source Solution | chinthalapudi Venkata Satya Sai Abhishek posted on the topic\n\n🚀 𝗜𝗻𝘁𝗿𝗼𝗱𝘂𝗰𝗶𝗻𝗴 𝗦𝗺𝗮𝗿𝘁 𝗥𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝗦𝘆𝘀𝘁𝗲𝗺 🍽️\nA modern platform designed to automate the complete restaurant workflow — from customer orders to delivery and business analytics.\n✨ 𝗞𝗲𝘆 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀:\n✅ Digital Order Management\n✅ Real-Time Kitchen Dashboard\n✅ Waiter Notifications\n✅ Inventory Management\n✅ Cash & Online Payment Tracking\n✅ Sales Analytics Dashboard\n✅ Menu Management\n✅ End-to-End Automated Workflow\n🛠️ 𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸:\n⚛️ React\n🔥 Firebase\n🎨 Tailwind CSS\n✨ Framer Motion\n🔄 𝗪𝗼𝗿𝗸𝗳𝗹𝗼𝘄:\nCustomer → Inventory → Payment → Chef → Waiter → Customer → Admin Dashboard\n🌟 𝗧𝗵𝗶𝘀 𝗽𝗿𝗼𝗷𝗲𝗰𝘁 𝗶𝘀 𝗯𝗲𝗶𝗻𝗴 𝗯𝘂𝗶𝗹𝘁 𝗮𝘀 𝗮𝗻 𝗢𝗽𝗲𝗻 𝗦𝗼𝘂𝗿𝗰𝗲 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 to help students and developers learn, collaborate, and build smarter restaurant solutions together.\n🚀 𝗧𝗵𝗲 𝗴𝗼𝗮𝗹 𝗶𝘀 𝘁𝗼 𝗯𝗿𝗶𝗻𝗴 𝗮𝘂𝘁𝗼𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗻𝗱 𝗿𝗲𝗮𝗹-𝘁𝗶𝗺𝗲 𝗺𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝘁𝗼 𝘁𝗵𝗲 𝗿𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁 𝗶𝗻𝗱𝘂𝘀𝘁𝗿𝘆.\n💬 𝗜𝗻𝘁𝗲𝗿𝗲𝘀𝘁𝗲𝗱 𝗶𝗻 𝗲𝘅𝗽𝗹𝗼𝗿𝗶𝗻𝗴 𝘁𝗵𝗲 𝗰𝗼𝗱𝗲 𝗼𝗿 𝗰𝗼𝗻𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗻𝗴?\n👇 𝗖𝗼𝗺𝗺𝗲𝗻𝘁 \"Open Source\" or \"GitHub\" below, and the repository link will be shared!\n⭐ 𝗖𝗼𝗻𝘁𝗿𝗶𝗯𝘂𝘁𝗶𝗼𝗻𝘀, 𝗶𝗱𝗲𝗮𝘀, 𝗮𝗻𝗱 𝗳𝗲𝗲𝗱𝗯𝗮𝗰𝗸 𝗮𝗿𝗲 𝗮𝗹𝘄𝗮𝘆𝘀 𝘄𝗲𝗹𝗰𝗼𝗺𝗲.\n#𝗢𝗽𝗲𝗻𝗦𝗼𝘂𝗿𝗰𝗲 #𝗥𝗲𝗮𝗰𝘁𝗝𝗦 #𝗙𝗶𝗿𝗲𝗯𝗮𝘀𝗲 #𝗧𝗮𝗶𝗹𝘄𝗶𝗻𝗱𝗖𝗦𝗦 #𝗪𝗲𝗯𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗺𝗲𝗻𝘁 #𝗙𝘂𝗹𝗹𝗦𝘁𝗮𝗰𝗸 #𝗥𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 #𝗚𝗶𝘁𝗛𝘂𝗯 #𝗜𝗻𝗻𝗼𝘃𝗮𝘁𝗶𝗼𝗻 #𝗧𝗲𝗰𝗵𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆\n\n[Read full LinkedIn post](https://www.linkedin.com/posts/chinthalapudi-venkata-satya-sai-abhishek-659ab0306_opensource-reactjs-firebase-ugcPost-7472234329713188864-zpc1/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE4d1qUBf-owTbBpGqA-pZCS3If4q4e7qMU)",
-      "metadata": {
-        "title": "Automate Restaurant Workflow with Open Source Solution | chinthalapudi Venkata Satya Sai Abhishek posted on the topic",
-        "summary": "🚀 𝗜𝗻𝘁𝗿𝗼𝗱𝘂𝗰𝗶𝗻𝗴 𝗦𝗺𝗮𝗿𝘁 𝗥𝗲𝘀𝘁𝗮𝘂𝗿𝗮𝗻𝘁 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁 𝗦𝘆𝘀𝘁𝗲𝗺 🍽️\nA modern platform designed to automate the complete re...",
-        "image": "https://dms.licdn.com/playlist/vid/v2/D5605AQHPUAnMF43S7w/thumbnail-with-play-button-overlay-high/B56Z7K1jQTIoC0-/0/1781519498040?e=2147483647&v=beta&t=uC5WthaZcHFaaYzQW7LqpY3qTMBpF0-5ztjpgDb3Eg4",
-        "images": [
-          "https://dms.licdn.com/playlist/vid/v2/D5605AQHPUAnMF43S7w/thumbnail-with-play-button-overlay-high/B56Z7K1jQTIoC0-/0/1781519498040?e=2147483647&v=beta&t=uC5WthaZcHFaaYzQW7LqpY3qTMBpF0-5ztjpgDb3Eg4"
-        ],
-        "tag": "LinkedIn Import",
-        "team": [
-          {
-            "name": "Chinthalapudi Venkata Satya Sai Abhishek",
-            "role": "AI Product Engineer | UI/UX & Full Stack Developer",
-            "avatar": "https://i.ibb.co/dSRSCvg/avatar.jpg",
-            "linkedIn": "https://www.linkedin.com/in/chinthalapudi-venkata-satya-saiabhishek-659ab0306"
-          }
-        ],
-        "link": "https://www.linkedin.com/posts/chinthalapudi-venkata-satya-sai-abhishek-659ab0306_opensource-reactjs-firebase-ugcPost-7472234329713188864-zpc1/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE4d1qUBf-owTbBpGqA-pZCS3If4q4e7qMU",
-        "publishedAt": "2026-06-25"
-      }
-    }
-  ],
-  "newsletter": {
-    "description": "",
-    "title": "",
-    "display": false
+    "label": "Home",
+    "subline": "AI Product Engineer and UI/UX & Full Stack Developer.",
+    "title": "Sai Abhishek's Portfolio",
+    "headline": "Building the Future , One Line of Code at a Time",
+    "path": "/"
   },
   "person": {
-    "firstName": "Sai Abhishek",
-    "role": "AI Product Engineer | UI/UX & Full Stack Developer",
+    "locale": "en",
+    "avatar": "https://i.ibb.co/dSRSCvg/avatar.jpg",
     "name": "Chinthalapudi Venkata Satya Sai Abhishek",
-    "lastName": "Chinthalapudi",
     "location": "Asia/Kolkata",
+    "role": "AI Product Engineer | UI/UX & Full Stack Developer",
     "languages": [
       "English",
       "Telugu",
       "Hindi"
     ],
-    "avatar": "https://i.ibb.co/dSRSCvg/avatar.jpg",
-    "email": "abhi31mahi@gmail.com",
-    "locale": "en"
+    "lastName": "Chinthalapudi",
+    "firstName": "Sai Abhishek",
+    "email": "abhi31mahi@gmail.com"
+  },
+  "newsletter": {
+    "title": "",
+    "display": false,
+    "description": ""
+  },
+  "gallery": {
+    "images": [],
+    "label": "Gallery",
+    "description": "A photo collection by Sai Abhishek",
+    "path": "/gallery",
+    "title": "Photo gallery – Sai Abhishek"
+  },
+  "work": {
+    "label": "Work",
+    "description": "AI and developer projects by Sai Abhishek",
+    "path": "/work",
+    "title": "Projects – Sai Abhishek"
   }
 }
