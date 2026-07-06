@@ -23,6 +23,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "i.ibb.co",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
         pathname: "**",
       },
