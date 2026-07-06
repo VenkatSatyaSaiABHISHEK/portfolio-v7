@@ -53,7 +53,40 @@ export async function getPortfolioData(): Promise<PortfolioData & { _firestoreEr
     }
   }
 
-  const finalData = (result || getDefaultPortfolioData()) as PortfolioData & { _firestoreError?: string };
+  const defaults = getDefaultPortfolioData();
+  const finalData = {
+    ...defaults,
+    ...(result || {}),
+    person: {
+      ...defaults.person,
+      ...(result?.person || {})
+    },
+    about: {
+      ...defaults.about,
+      ...(result?.about || {})
+    },
+    home: {
+      ...defaults.home,
+      ...(result?.home || {})
+    },
+    newsletter: {
+      ...defaults.newsletter,
+      ...(result?.newsletter || {})
+    },
+    gallery: {
+      ...defaults.gallery,
+      ...(result?.gallery || {})
+    },
+    work: {
+      ...defaults.work,
+      ...(result?.work || {})
+    },
+    blog: {
+      ...defaults.blog,
+      ...(result?.blog || {})
+    }
+  } as PortfolioData & { _firestoreError?: string };
+
   if (!finalData.projects) {
     finalData.projects = [];
   }

@@ -17,6 +17,8 @@ import { Footer, Header, RouteGuard, Providers } from "@/components";
 import { baseURL, effects, fonts, style, dataStyle } from "@/resources";
 import { getPortfolioData } from "@/utils/portfolioData";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata() {
   const portfolioData = await getPortfolioData();
   return Meta.generate({

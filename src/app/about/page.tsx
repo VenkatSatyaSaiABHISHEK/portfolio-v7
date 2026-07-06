@@ -18,6 +18,8 @@ import styles from "@/components/about/about.module.scss";
 import React from "react";
 import { getPortfolioData } from "@/utils/portfolioData";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata() {
   const data = await getPortfolioData();
   return Meta.generate({

@@ -3,6 +3,8 @@ import { baseURL } from "@/resources";
 import { Projects } from "@/components/work/Projects";
 import { getPortfolioData } from "@/utils/portfolioData";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata() {
   const data = await getPortfolioData();
   return Meta.generate({

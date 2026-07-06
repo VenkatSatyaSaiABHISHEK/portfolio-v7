@@ -18,6 +18,8 @@ import { Posts } from "@/components/blog/Posts";
 import { getPortfolioData } from "@/utils/portfolioData";
 import RotatingBadge from "@/components/RotatingBadge";
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata() {
   const data = await getPortfolioData();
   return Meta.generate({
